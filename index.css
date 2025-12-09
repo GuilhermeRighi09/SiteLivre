@@ -1,0 +1,142 @@
+/* Variáveis de Cores - Fácil de alterar */
+:root {
+    --branco: #FFFFFF;
+    --lilas-claro: #F3E5F5;
+    --lilas-medio: #E1BEE7;
+    --lilas-forte: #BA68C8; /* Cor do coração e destaques */
+    --texto-cinza: #555555;
+}
+
+/* Reset básico para garantir que fique igual em todos os celulares */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lilas-claro);
+    font-family: 'Quicksand', sans-serif; /* Fonte moderna e redonda */
+    color: var(--texto-cinza);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container centralizado estilo 'Cartão' */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Animação suave ao abrir o site */
+.fade-in {
+    background-color: var(--branco);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(186, 104, 200, 0.15); /* Sombra lilás suave */
+    text-align: center;
+    width: 100%;
+    animation: surgir 1.5s ease-out;
+}
+
+@keyframes surgir {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tipografia */
+.titulo {
+    font-family: 'Dancing Script', cursive; /* Fonte cursiva romântica */
+    color: var(--lilas-forte);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.mensagem p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* --- O CORAÇÃO PULSANTE EM CSS --- */
+.heart-container {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.heart {
+    background-color: var(--lilas-forte);
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+    animation: pulsar 1.2s infinite; /* Faz o coração bater */
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: var(--lilas-forte);
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+@keyframes pulsar {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Empurra o rodapé para o final da tela */
+    color: var(--lilas-forte);
+}
+
+.dedicatoria p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.dedicatoria h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+}
+
+/* Ajustes finos para celulares pequenos */
+@media (max-width: 380px) {
+    .titulo { font-size: 2rem; }
+    .fade-in { padding: 30px 20px; }
+}
